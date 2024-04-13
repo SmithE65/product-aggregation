@@ -1,3 +1,3 @@
-﻿namespace data_generator.Model;
+﻿namespace DataGenerator.Model;
 
-internal record class Record(string TransactionId, string Date, string ProductId, string ProductName, string Quantity, string PricePerUnit);
+internal record class Record(Guid TransactionId, DateTime Date, Guid ProductId, string ProductName, int Quantity, double PricePerUnit);
