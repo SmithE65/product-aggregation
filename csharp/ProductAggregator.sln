@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34804.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAggregator", "ProductAggregator\ProductAggregator.csproj", "{D1DCAA74-6DAC-4176-B9C5-0290A65F2F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAggregator", "ProductAggregator\ProductAggregator.csproj", "{D1DCAA74-6DAC-4176-B9C5-0290A65F2F2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAggregator.Tests", "ProductAggregator.Tests\ProductAggregator.Tests.csproj", "{0828D899-444B-4971-BF45-ADFA53F78EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D1DCAA74-6DAC-4176-B9C5-0290A65F2F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1DCAA74-6DAC-4176-B9C5-0290A65F2F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1DCAA74-6DAC-4176-B9C5-0290A65F2F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0828D899-444B-4971-BF45-ADFA53F78EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0828D899-444B-4971-BF45-ADFA53F78EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0828D899-444B-4971-BF45-ADFA53F78EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0828D899-444B-4971-BF45-ADFA53F78EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

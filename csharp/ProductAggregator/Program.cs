@@ -11,7 +11,7 @@ if (inputPath is null || !File.Exists(inputPath))
 
 Dictionary<string, TransactionAggregate> aggregates = [];
 int transactionCount = 0;
-int totalUnitsSold = 0;
+long totalUnitsSold = 0;
 double totalRevenue = 0;
 
 TransactionFile transactionFile = new(inputPath);
@@ -19,7 +19,7 @@ foreach (Transaction transaction in transactionFile.ReadTransactions())
 {
     transactionCount++;
     totalUnitsSold += transaction.Quantity;
-    var transactionTotal = transaction.Quantity * transaction.PricePerUnit;
+    double transactionTotal = transaction.Quantity * transaction.PricePerUnit;
     totalRevenue += transactionTotal;
 
     if (aggregates.TryGetValue(transaction.Product.Id, out TransactionAggregate? aggregate))
