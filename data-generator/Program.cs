@@ -7,8 +7,8 @@ Product[] products = GenerateProductMetaData(random, productIdCount);
 
 int recordCount = 10_000_000;
 
-DateTime startDate = new(2024, 4, 1, 0, 0, 0, 0);
-DateTime endDate = new(2024, 4, 8, 0, 0, 0, 0);
+DateTime startDate = new(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+DateTime endDate = new(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Utc);
 DateTime[] transactionDates = GenerateOrderedDates(random, recordCount, startDate, endDate);
 
 string filename = "test.csv";
@@ -30,7 +30,7 @@ IEnumerable<string> CreateRecords(int count)
         double priceVariation = (random.NextDouble() * 0.3) + 0.85;
         double pricePerUnit = product.PricePerUnit * priceVariation;
 
-        yield return $"{transactionId},{date},{productId},{productName},{quantity},{pricePerUnit:F2}";
+        yield return $"{transactionId},{date:O},{productId},{productName},{quantity},{pricePerUnit:F2}";
     }
 }
 
