@@ -1,6 +1,6 @@
 ﻿namespace ProductAggregator.Models;
 
-internal record class Transaction(
+public record class Transaction(
     string TransactionId,
     DateTime Date,
     Product Product,

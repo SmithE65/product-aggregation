@@ -1,5 +1,5 @@
 ﻿namespace ProductAggregator.Models;
 
-internal record class Product(
+public record class Product(
     string Id,
     string Name);
