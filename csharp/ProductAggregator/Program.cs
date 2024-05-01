@@ -1,4 +1,5 @@
-﻿using ProductAggregator.Models;
+﻿using ProductAggregator.Extensions;
+using ProductAggregator.Models;
 
 Console.Write("Path: ");
 string? inputPath = Console.ReadLine();
@@ -17,23 +18,10 @@ double totalRevenue = 0;
 TransactionFile transactionFile = new(inputPath);
 foreach (Transaction transaction in transactionFile.ReadTransactions())
 {
+    aggregates.Upsert(transaction);
     transactionCount++;
     totalUnitsSold += transaction.Quantity;
-    double transactionTotal = transaction.Quantity * transaction.PricePerUnit;
-    totalRevenue += transactionTotal;
-
-    if (aggregates.TryGetValue(transaction.Product.Id, out TransactionAggregate? aggregate))
-    {
-        aggregate.Quantity += transaction.Quantity;
-        aggregate.TotalPrice += transactionTotal;
-    }
-    else
-    {
-        aggregates[transaction.Product.Id] = new TransactionAggregate(
-            transaction.Product,
-            transaction.Quantity,
-            transactionTotal);
-    }
+    totalRevenue += transaction.Quantity * transaction.PricePerUnit;
 }
 
 Console.WriteLine($"Read {transactionCount} transactions for {aggregates.Count} products.");
